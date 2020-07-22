@@ -14,3 +14,6 @@ def on_info(server,info):
         motd=info.content[7:].replace('&','§')
         server.execute('carpet setDefault customMOTD {}'.format(motd))
         server.execute('say §e[MOTD]§r{}已经将MOTD修改为{}'.format(info.player,motd))
+
+def on_load(server, old_module):
+    server.add_help_message('!!motd', '§f获取CustomMOTD使用方法')
